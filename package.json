@@ -1,0 +1,29 @@
+{
+  "name": "bakers-cabane",
+  "version": "1.0.0",
+  "description": "A pastry app that lets users input the names of pastries they'd like to eat.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EtienneWarneck/Bakers-Cabane.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EtienneWarneck/Bakers-Cabane/issues"
+  },
+  "homepage": "https://github.com/EtienneWarneck/Bakers-Cabane#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
