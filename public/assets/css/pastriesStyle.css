@@ -1,5 +1,6 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-size: 1.2rem;
 }
 
@@ -14,36 +15,41 @@ ul {
   input {
       width: 200px;
       height: 30px;
+      margin: 20px;
   }
 
   .button {
-    border-radius: 8px;
+    border-radius: 2px;
     padding: 10px 20px;
+    display: inline-block;
 }
 
 #buttonDelete{
     font-size: 12px;
-    background-color: red;
+    background-color: #ccb560;
+    opacity: 0.5;
     
 }
 #buttonUpdate{
     font-size: 12px;
-    background-color: green;
+    background-color: #9cab91;
     
 }
 #buttonAdd{
     margin: auto;
-    font-size: 20px;
-background-color: rgb(255, 241, 45);
+    font-size: 12px;
+    background-color:#f4b9b3;
+
+
 }
 
 
 .col {
     float:left;
     display: block;
-    height: 500px;
+    height: 400px;
     width: 300px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: auto;
     width:33%;
     text-align: center;
@@ -51,11 +57,27 @@ background-color: rgb(255, 241, 45);
 
 img {
     display: inline-block;
-  }ç
+  }
 
-.add {
-    /* margin-top:0; */
-
-    border: 1px solid red;
+.pastryNew {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
     text-align: center;
+  
 }
+
+.logo{
+    margin-top: -20px;
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+    
+
+}
+
