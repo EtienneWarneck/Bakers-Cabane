@@ -1,22 +1,61 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
 }
 
-.left {
-float: left;
-width: 300px;
- border: 1px solid red;
+h1 {
+    text-align: center;
 }
 
-.right {
+ul {
+    list-style-type: none;
+}
+
+  input {
+      width: 200px;
+      height: 30px;
+  }
+
+  .button {
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+#buttonDelete{
+    font-size: 12px;
+    background-color: red;
     
-float: right;
-    border: 1px solid red;
+}
+#buttonUpdate{
+    font-size: 12px;
+    background-color: green;
+    
+}
+#buttonAdd{
+    margin: auto;
+    font-size: 20px;
+background-color: rgb(255, 241, 45);
 }
 
-.add{
-    margin-top: 400px;;
+
+.col {
+    float:left;
+    display: block;
+    height: 500px;
+    width: 300px;
+    border: 1px solid red;
+    margin: auto;
+    width:33%;
+    text-align: center;
+}
+
+img {
+    display: inline-block;
+  }ç
+
+.add {
+    /* margin-top:0; */
+
     border: 1px solid red;
     text-align: center;
-
 }

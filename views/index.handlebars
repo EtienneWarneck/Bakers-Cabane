@@ -1,49 +1,53 @@
-<h1>Pastries!</h1>
+<body>
+    
+    <h1>THE BAKER'S HUT</h1>
 
-<div class="left">
-<h2>Pastries to eat!</h2>
-<ul >
-    {{#each pastry}} 
-    {{#unless devoured}} 
-    <li class="pastryItem">{{pastry_name}}</li> 
-    <button class="" data-devoured="{{devoured}}" data-id="{{id}}">DEVOUR!!!</button>
-    {{/unless}}
-    {{/each}}
-</ul>
+
+<!-- LEFT COLUMN -->
+<div>
+<div class="col">
+    <h2>Pastries to eat!</h2>
+    <ul>
+        {{#each pastry}}
+        {{#unless devoured}}
+        <li class="pastryItem">{{pastry_name}}</li>
+        <button class="button" id="buttonUpdate" data-id="{{id}}" data-state="{{devoured}}" >DEVOUR IT !</button>
+        {{/unless}}
+        {{/each}}
+    </ul>
 </div>
 
-<div class="right">
-<h2>Pastries devoured!</h2>
-<ul>
-    {{#each pastry}}
-    {{#if notDevoured}}
-    <li class="pastryItem">{{pastry_name}}</li>
-    {{> pastry/pastry-block devour=true}}
-    {{!-- <button class="" data-devoured="{{devoured}}" data-id="{{id2}}">  --}}
-    {{/if}}
-    {{/each}}
-</ul>
+<div class="col">
+    <img src="/assets/img/food.tif" heigth="100px" alt="">
+
 </div>
 
+<!-- RIGHT COLUMN -->
+<div class="col">
+    <h2>Pastries devoured!</h2>
+    <ul>
+        {{#each pastry}}
+        {{#if devoured}}
+        <li class="pastryItem">{{pastry_name}}</li>
+        <button  class="button" id="buttonDelete" data-id="{{id}}" >DELETE!</button>
+        <br>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+
+<!-- BOTTOM COLUMN -->
 <div class="add">
-<h2>Add a Pastry</h2>
-<form class="create-form">
-    <div class="form-group">
-        <label for="pastry_add">Pastry Name:</label>
-        <input type="text" id="pastry_add" name="">
-    </div>
-    <button type="submit" id="addPastry">Add Pastry</button>
+    <h2>Add a Pastry</h2>
+    <form class="pastryNew">
+        <div class="form-group">
+            <label for="pastry_add">Pastry Name:</label>
+            <input type="text" id="pastryInputId" autocomplete="off">
+        </div>
+        <br>
+        <button class="button"  id="buttonAdd" type="submit">ADD PASTRY</button>
+    </form>
+</div>
 </div>
 
-</form>
-
-{{!-- <h2>Delete a Cat</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-  <button type="submit">Delete Cat</button>
-
-</form> --}}

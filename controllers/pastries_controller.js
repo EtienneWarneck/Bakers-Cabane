@@ -14,7 +14,7 @@ router.get("/", function (req, res) {
 
         res.render('index', { //passing to index.handlebar
             pastry: data,    //
-            // pageTitle: 'index', //
+            // pageTitle: 'index',
             // pastriesStyleCSS: true
         });
     });
@@ -22,13 +22,16 @@ router.get("/", function (req, res) {
 
 router.post("/api/pastry", function (req, res) {
 
-    console.log("CONTROLLER POST api/pastry route");
+    console.log("CONTROLLER POST api/pastry route"); //working
 
     pastry.create(["pastry_name", "devoured"], [req.body.pastry_name, req.body.devoured], function (result) {
-        // (["column DB", "column DB"] , [valueEnteredByUser, ] 
+        // (["column DB", "column DB"] , [valueEnteredByUser, 0 ] 
+        //console.log(req.body.pastry_name); // =
 
-        res.json({ id: result.insertId });  // creates an ID to match result
-        console.log("CONTROLLER POST");
+        res.json({ id: result.insertId });  // creates an ID to assign new pastry
+
+        console.log(result.insertId);
+        console.log("CONTROLLER POST 2");
         //Sends a JSON response. This express method sends a response
         //that is the parameter converted to a JSON string using JSON.stringify
         //JSON.stringify converts a JavaScript object or value to a JSON string,
@@ -38,7 +41,9 @@ router.post("/api/pastry", function (req, res) {
 
 router.put("/api/pastry/:id", function (req, res) {
     var condition = "id = " + req.params.id;
-    // console.log("condition", condition);
+
+    console.log("condition", condition);
+
     pastry.update(
         {
             devoured: req.body.devoured
@@ -55,5 +60,15 @@ router.put("/api/pastry/:id", function (req, res) {
     );
 });
 
-// Export routes for server.js to use.
-module.exports = router;
+    router.delete("/api/pastry/:id", function (req, res) {
+        var condition = "id = " + req.params.id;
+
+        pastry.delete(condition,function (result) {
+                res.status(200).end();
+
+            }
+        );
+    });
+
+    // Export routes for server.js to use.
+    module.exports = router;

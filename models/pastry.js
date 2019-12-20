@@ -15,7 +15,7 @@ var pastry = {
 
       orm.insertOne("pastries", cols, vals, function(res) {
 
-        console.log(" pastry.js CREATE");
+        console.log(" pastry.js CREATE"); //working
 
         cb(res);
         console.log(res);
@@ -25,9 +25,15 @@ var pastry = {
 
     update: function(objColVals, condition, cb) {
       orm.updateOne("pastries", objColVals, condition, function(res) {
+
+        console.log(" pastry.js UPDATE"); //working
+
         cb(res);
       });
     },
+
+
+
     delete: function(condition, cb) {
       orm.deleteOne("pastries", condition, function(res) {
         cb(res);
